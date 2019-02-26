@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.icode.cas.mapper.CasSysDictionaryMapper">
-
+<mapper namespace="com.icode.cas.repository.mapper.CasSysDictionaryMapper">
     <!-- 通用查询映射结果 -->
     <resultMap id="BaseResultMap" type="com.icode.cas.repository.entity.CasSysDictionary">
         <id column="id" property="id" />
@@ -22,5 +21,6 @@
     <sql id="Base_Column_List">
         id, parent_id, item_key, item_value, item_namecn, sort, status, description, create_time, update_time, admin_create, admin_update
     </sql>
+
 
 </mapper>

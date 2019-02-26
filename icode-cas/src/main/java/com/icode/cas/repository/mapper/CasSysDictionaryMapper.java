@@ -1,7 +1,7 @@
 package com.icode.cas.repository.mapper;
 
-import com.icode.cas.repository.entity.CasSysDictionary;
 import com.baomidou.mybatisplus.mapper.BaseMapper;
+import com.icode.cas.repository.entity.CasSysDictionary;
 
 /**
  * <p>

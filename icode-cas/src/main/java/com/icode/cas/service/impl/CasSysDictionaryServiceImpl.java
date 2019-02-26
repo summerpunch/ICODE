@@ -136,26 +136,26 @@ public class CasSysDictionaryServiceImpl extends ServiceImpl<CasSysDictionaryMap
     @Override
     public ResponseData doDeleteOrForbiddenDictionary(Integer id, String type) {
         CasSysDictionary casSysDictionary = selectById(id);
-        if( casSysDictionary != null ){
+        if (casSysDictionary != null) {
             switch (type) {
                 case ResponseFinal.FORBIDDEN:
                     casSysDictionary.setStatus(35);
-                    if( updateById(casSysDictionary) ){
-                        return ResponseUtil.success(null,ResponseFinal.FORBIDDEN_OK);
+                    if (updateById(casSysDictionary)) {
+                        return ResponseUtil.success(null, ResponseFinal.FORBIDDEN_OK);
                     } else {
-                        return ResponseUtil.success(null,ResponseFinal.FORBIDDEN_COME_TO_NOTHING);
+                        return ResponseUtil.success(null, ResponseFinal.FORBIDDEN_COME_TO_NOTHING);
                     }
                 case ResponseFinal.DELETE:
-                    if( deleteById(id) ){
-                        return ResponseUtil.success(null,ResponseFinal.DELETE_OK);
+                    if (deleteById(id)) {
+                        return ResponseUtil.success(null, ResponseFinal.DELETE_OK);
                     } else {
-                        return ResponseUtil.success(null,ResponseFinal.DELETE_COME_TO_NOTHING);
+                        return ResponseUtil.success(null, ResponseFinal.DELETE_COME_TO_NOTHING);
                     }
                 default:
                     return ResponseUtil.paramInvalidError(ResponseFinal.PARAMETER_ABNORMITY);
             }
         } else {
-            return ResponseUtil.success(null,ResponseFinal.DATA_DOES_NOT_EXIST);
+            return ResponseUtil.success(null, ResponseFinal.DATA_DOES_NOT_EXIST);
         }
     }
 
